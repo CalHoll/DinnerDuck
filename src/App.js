@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import DuckForm from "./DuckForm";
 import './App.css';
 
-const API = 'ec2-35-183-123-114.ca-central-1.compute.amazonaws.com/api/'
+const Host = 'ec2-35-183-123-114.ca-central-1.compute.amazonaws.com'
 
 class App extends Component {
   constructor(props) {
@@ -13,7 +13,13 @@ class App extends Component {
       whereFed: '',
       numberFed: '',
       whatFed: '',
+      ducks:[]
     };
+  }
+  componentDidMount() {
+    fetch(`${Host}/api/get-ducks`)
+      .then(response => console.log('response received = ', response.body))
+      .catch(err => console.log('error: ', err))
   }
 
   handleTextChange = name => newText => {
@@ -27,7 +33,10 @@ class App extends Component {
     });
   };
   handleSubmit (event) {
-    console.log('submit invoked where state = ', this.state);
+    fetch(`${Host}/api/submit-duck`)
+      .then(response => response.json())
+      .then(parsed => console.log('response received = ', parsed))
+      .catch(err => console.log('error: ', JSON.stringify(err)))
     this.handleClear();
   };
   handleClear = name => event => {
