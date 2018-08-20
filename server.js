@@ -8,7 +8,6 @@ const port  = 8080;
 // Obviously never check user and pass into git for a real app
 mongoose.connect('mongodb://duckUser:superSecretDontTell@url:27017/ducks', { useNewUrlParser: true } );
 // from within mongo shell: db.auth("duckUser","superSecretDontTell");
-
 mongoose.Promise = global.Promise;
 
 const app = express();
@@ -23,7 +22,7 @@ app.get('/', function (req, res) {
 });
 
 // API Routes
-require('./routes')(app);
+require('./api/routes')(app);
 
 app.listen(port, '0.0.0.0', (err) => {
   if (err) {
