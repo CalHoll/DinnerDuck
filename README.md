@@ -14,7 +14,6 @@ The scientist would like to crowdsource this information by creating a web appli
 people can submit these data points. The scientist would like to be able to do reporting on the
 data for her PhD thesis
 
-
 # Create-React-App Boilerplate Output:
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

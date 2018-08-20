@@ -22,8 +22,8 @@ const DuckForm = props => {
       <br/>
       <label htmlFor="whatFed">What type of food was given (NOTE - is this the same as #2?)?</label>
       <div onChange={handleSelects('whatFed')}>
-        <input type="radio" value="Type1" name="whatFed"/> Seeds
-        <input type="radio" value="Type2" name="whatFed"/> Bread
+        <input type="radio" value="Seeds" name="whatFed"/> Seeds
+        <input type="radio" value="Bread" name="whatFed"/> Bread
       </div>
       <br/>
 

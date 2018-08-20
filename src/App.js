@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import DuckForm from "./DuckForm";
 import './App.css';
 
+const API = 'ec2-35-183-123-114.ca-central-1.compute.amazonaws.com/api/'
+
 class App extends Component {
   constructor(props) {
     super(props);
