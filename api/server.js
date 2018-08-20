@@ -1,5 +1,4 @@
 const express = require('express');
-const fs = require('fs');
 const mongoose = require('mongoose');
 const path = require('path');
 
@@ -7,7 +6,7 @@ const port  = 8080;
 
 // Mongoose
 // Obviously never check user and pass into git for a real app
-mongoose.connect('mongodb://duckUser:superSecretDontTell@url:27017/ducks');
+mongoose.connect('mongodb://duckUser:superSecretDontTell@url:27017/ducks', { useNewUrlParser: true } );
 // from within mongo shell: db.auth("duckUser","superSecretDontTell");
 
 mongoose.Promise = global.Promise;
